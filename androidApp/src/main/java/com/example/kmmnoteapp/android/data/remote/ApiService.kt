@@ -2,6 +2,7 @@ package com.example.kmmnoteapp.android.data.remote
 
 import com.example.kmmnoteapp.android.data.remote.dto.auth.*
 import com.example.kmmnoteapp.android.data.remote.dto.blog_post.BlogPostDto
+import com.example.kmmnoteapp.android.data.remote.dto.blog_post.GetBlogPosts
 import retrofit2.Response
 import retrofit2.http.*
 
@@ -21,5 +22,5 @@ interface ApiService {
 
     @Headers("Content-Type: application/json")
     @GET(ApiRoutes.BLOG_POST)
-    suspend fun fetchAllPost(): List<BlogPostDto>
+    suspend fun getAllPost(): GetBlogPosts
 }
