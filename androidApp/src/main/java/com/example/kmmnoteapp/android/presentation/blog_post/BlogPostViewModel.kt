@@ -12,7 +12,7 @@ import kotlinx.coroutines.flow.onEach
 
 class BlogPostViewModel(
     private val getAllPostUseCase: GetAllPostUseCase,
-    //private val sharedPref: SharedPreferencesService
+    private val sharedPref: SharedPreferencesService
 
 ) : ViewModel() {
 
