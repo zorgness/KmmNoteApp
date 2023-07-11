@@ -7,4 +7,5 @@ object ApiRoutes {
     const val UPDATE = "/api/users/{userId}"
     const val LOGIN = "/api/login"
     const val BLOG_POST = "/api/blog_posts"
+    const val BLOG_POST_BY_ID = "/api/blog_posts/{postId}"
 }
