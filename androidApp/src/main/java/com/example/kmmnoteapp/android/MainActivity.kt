@@ -8,7 +8,6 @@ import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.kmmnoteapp.Greeting
 import com.example.kmmnoteapp.android.presentation.blog_post.BlogPostScreen
 import com.example.kmmnoteapp.android.presentation.blog_post.BlogPostViewModel
 import org.koin.androidx.viewmodel.ext.android.getViewModel
