@@ -20,11 +20,11 @@ class BlogPostViewModel(
     val state: State<BlogPostListState> = _state
 
     init {
-        getAllPost()
+        getAllUserPost()
     }
-    private fun getAllPost() {
+    private fun getAllUserPost() {
 
-        getAllPostUseCase().onEach { result ->
+        getAllPostUseCase(34).onEach { result ->
             when(result) {
                 is Resource.Success -> {
                     _state.value = BlogPostListState(blogPostList = result.data ?:

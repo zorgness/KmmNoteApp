@@ -11,14 +11,12 @@ import java.io.IOException
 class GetAllPostUseCase(
     private val repository: BlogPostRepository
 ) {
-    operator fun invoke(): Flow<Resource<List<BlogPostDto>>> = flow {
+    operator fun invoke(accountId: Long): Flow<Resource<List<BlogPostDto>>> = flow {
 
         try {
-
             emit(Resource.Loading())
-            val blogPosts = repository.getAllPost()
+            val blogPosts = repository.getAllUserPost(accountId)
             emit(Resource.Success(data = blogPosts.list))
-
 
         } catch (he: HttpException) {
 

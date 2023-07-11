@@ -1,7 +1,6 @@
 package com.example.kmmnoteapp.android.data.remote
 
 import com.example.kmmnoteapp.android.data.remote.dto.auth.*
-import com.example.kmmnoteapp.android.data.remote.dto.blog_post.BlogPostDto
 import com.example.kmmnoteapp.android.data.remote.dto.blog_post.GetBlogPosts
 import retrofit2.Response
 import retrofit2.http.*
@@ -18,9 +17,11 @@ interface ApiService {
 
     @Headers("Content-Type: application/merge-patch+json")
     @PATCH(ApiRoutes.UPDATE)
-    suspend fun updateUser(@Path("userId") userId: Int, @Body updateInfo: UpdateDto): Response<UserDto>?
+    suspend fun updateUser(@Path("userId") userId: Long, @Body updateInfo: UpdateDto): Response<UserDto>?
 
     @Headers("Content-Type: application/json")
     @GET(ApiRoutes.BLOG_POST)
-    suspend fun getAllPost(): GetBlogPosts
+    suspend fun getAllUserPost(
+        @Query("userId") userId: Long,
+    ): GetBlogPosts
 }
